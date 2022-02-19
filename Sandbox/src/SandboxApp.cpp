@@ -14,13 +14,7 @@ public:
 	}
 };
 
-int main()
+Pistachio::Application* Pistachio::CreateApplication()
 {
-	Sandbox* sandbox = new Sandbox();
-	
-	sandbox->Run();
-
-	delete sandbox;
-
-	return 1;
+	return new Sandbox();
 }
