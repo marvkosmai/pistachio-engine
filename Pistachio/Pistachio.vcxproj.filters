@@ -34,6 +34,7 @@
     <ClInclude Include="src\Pistachio\Log.h">
       <Filter>Pistachio</Filter>
     </ClInclude>
+    <ClInclude Include="src\pacopch.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Pistachio\Application.cpp">
@@ -42,5 +43,6 @@
     <ClCompile Include="src\Pistachio\Log.cpp">
       <Filter>Pistachio</Filter>
     </ClCompile>
+    <ClCompile Include="src\pacopch.cpp" />
   </ItemGroup>
 </Project>

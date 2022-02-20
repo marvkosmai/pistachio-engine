@@ -2,9 +2,6 @@
 
 #include "Pistachio/Core.h"
 
-#include <string>
-#include <functional>
-
 namespace Pistachio {
 
 	// Events in Pistachio are currently blocking, meaning when an event occurs it
