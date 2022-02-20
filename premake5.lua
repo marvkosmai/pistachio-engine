@@ -62,7 +62,11 @@ project "Pistachio"
 		}
 
 	filter "configurations:Debug"
-		defines "PACO_DEBUG"
+		defines 
+		{
+			"PACO_DEBUG",
+			"PACO_ENABLE_ASSERTS"
+		}
 		symbols "On"
 
 	filter "configurations:Release"
