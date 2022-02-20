@@ -45,8 +45,6 @@ namespace Pistachio {
 		KeyReleasedEvent(int keycode)
 			: KeyEvent(keycode) {}
 
-		inline int GetRepeatCount() const { return m_RepeatCount; }
-
 		std::string ToString() const override
 		{
 			std::stringstream ss;
