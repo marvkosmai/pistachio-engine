@@ -10,6 +10,11 @@ workspace "Pistachio"
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
+IncludeDir = {}
+IncludeDir["GLFW"] = "Pistachio/vendor/GLFW/include"
+
+include "Pistachio/vendor/GLFW"
+
 project "Pistachio"
 	location "Pistachio"
 	kind "SharedLib"
@@ -30,7 +35,14 @@ project "Pistachio"
 	includedirs
 	{
 		"%{prj.name}/src",
-		"%{prj.name}/vendor/spdlog/include"
+		"%{prj.name}/vendor/spdlog/include",
+		"%{IncludeDir.GLFW}"
+	}
+
+	links
+	{
+		"GLFW",
+		"opengl32.lib"
 	}
 
 	filter "system:windows"
