@@ -12,8 +12,10 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
 IncludeDir = {}
 IncludeDir["GLFW"] = "Pistachio/vendor/GLFW/include"
+IncludeDir["GLAD"] = "Pistachio/vendor/GLAD/include"
 
 include "Pistachio/vendor/GLFW"
+include "Pistachio/vendor/GLAD"
 
 project "Pistachio"
 	location "Pistachio"
@@ -36,12 +38,14 @@ project "Pistachio"
 	{
 		"%{prj.name}/src",
 		"%{prj.name}/vendor/spdlog/include",
-		"%{IncludeDir.GLFW}"
+		"%{IncludeDir.GLFW}",
+		"%{IncludeDir.GLAD}"
 	}
 
 	links
 	{
 		"GLFW",
+		"GLAD",
 		"opengl32.lib"
 	}
 
@@ -53,7 +57,8 @@ project "Pistachio"
 		defines
 		{
 			"PACO_PLATFORM_WINDOWS",
-			"PACO_BUILD_DLL"
+			"PACO_BUILD_DLL",
+			"GLFW_INCLUDE_NONE"
 		}
 
 		postbuildcommands

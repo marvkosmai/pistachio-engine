@@ -5,6 +5,8 @@
 #include "Pistachio/Events/MouseEvent.h"
 #include "Pistachio/Events/KeyEvent.h"
 
+#include <glad/glad.h>
+
 namespace Pistachio {
 
 	static bool s_GLFWInitialized = false;
@@ -41,7 +43,7 @@ namespace Pistachio {
 		{
 			// TODO: glfwTerminate on system shutdown
 			int success = glfwInit();
-			PACO_CORE_ASSERT(success, "Could not initialize GLFW!");
+			PACO_CORE_ASSERT(success, "Failed to initialize GLFW!");
 
 			glfwSetErrorCallback(GLFWErrorCallback);
 			s_GLFWInitialized = true;
@@ -49,6 +51,8 @@ namespace Pistachio {
 
 		m_Window = glfwCreateWindow((int)m_Data.Width, (int)m_Data.Height, m_Data.Title.c_str(), nullptr, nullptr);
 		glfwMakeContextCurrent(m_Window);
+		int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
+		PACO_CORE_ASSERT(status, "Failed to initialize GLAD!");
 		glfwSetWindowUserPointer(m_Window, &m_Data);
 		SetVSync(true);
 

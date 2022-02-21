@@ -6,7 +6,6 @@
 #include "Pistachio/Events/Event.h"
 #include "Pistachio/Events/ApplicationEvent.h"
 
-
 namespace Pistachio {
 
 	class PISTACHIO_API Application
