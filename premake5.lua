@@ -67,14 +67,17 @@ project "Pistachio"
 			"PACO_DEBUG",
 			"PACO_ENABLE_ASSERTS"
 		}
+		buildoptions "/MDd"
 		symbols "On"
 
 	filter "configurations:Release"
 		defines "PACO_RELEASE"
+		buildoptions "/MD"
 		optimize "On"
 
 	filter "configurations:Dist"
 		defines "PACO_DIST"
+		buildoptions "/MD"
 		optimize "On"
 
 project "Sandbox"
@@ -114,12 +117,15 @@ project "Sandbox"
 
 	filter "configurations:Debug"
 		defines "PACO_DEBUG"
+		buildoptions "/MDd"
 		symbols "On"
 
 	filter "configurations:Release"
 		defines "PACO_RELEASE"
+		buildoptions "/MD"
 		optimize "On"
 
 	filter "configurations:Dist"
 		defines "PACO_DIST"
+		buildoptions "/MD"
 		optimize "On"
