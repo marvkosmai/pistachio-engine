@@ -10,6 +10,10 @@
 	#error Pistachio only supports Windows!
 #endif
 
+#ifdef PACO_DEBUG
+	#define PACO_ENABLE_ASSERTS
+#endif
+
 #ifdef PACO_ENABLE_ASSERTS
 	#define PACO_CORE_ASSERT(x, ...) { if(!(x)) { PACO_CORE_ERROR("Assertion failed: {0}", __VA_ARGS__); __debugbreak(); } }
 	#define PACO_ASSERT(x, ...) { if(!(x)) { PACO_ERROR("Assertion failed: {0}", __VA_ARGS__); __debugbreak(); } }

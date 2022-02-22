@@ -8,6 +8,8 @@ workspace "Pistachio"
 		"Dist"
 	}
 
+	startproject "Sandbox"
+
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
 IncludeDir = {}
@@ -15,14 +17,18 @@ IncludeDir["GLFW"] = "Pistachio/vendor/GLFW/include"
 IncludeDir["GLAD"] = "Pistachio/vendor/GLAD/include"
 IncludeDir["ImGui"] = "Pistachio/vendor/imgui"
 
-include "Pistachio/vendor/GLFW"
-include "Pistachio/vendor/GLAD"
-include "Pistachio/vendor/imgui"
+group "Dependencies"
+	include "Pistachio/vendor/GLFW"
+	include "Pistachio/vendor/GLAD"
+	include "Pistachio/vendor/imgui"
+
+group ""
 
 project "Pistachio"
 	location "Pistachio"
 	kind "SharedLib"
 	language "C++"
+	staticruntime "Off"
 
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
@@ -55,7 +61,6 @@ project "Pistachio"
 
 	filter "system:windows"
 		cppdialect "C++17"
-		staticruntime "On"
 		systemversion "latest"
 		
 		defines
@@ -67,32 +72,29 @@ project "Pistachio"
 
 		postbuildcommands
 		{
-			("{COPY} %{cfg.buildtarget.relpath} ../bin/" .. outputdir .. "/Sandbox")
+			("{COPYDIR} %{cfg.buildtarget.relpath} ../bin/" .. outputdir .. "/Sandbox")
 		}
 
 	filter "configurations:Debug"
-		defines 
-		{
-			"PACO_DEBUG",
-			"PACO_ENABLE_ASSERTS"
-		}
-		buildoptions "/MDd"
+		defines "PACO_DEBUG"
+		runtime "Debug"
 		symbols "On"
 
 	filter "configurations:Release"
 		defines "PACO_RELEASE"
-		buildoptions "/MD"
+		runtime "Release"
 		optimize "On"
 
 	filter "configurations:Dist"
 		defines "PACO_DIST"
-		buildoptions "/MD"
+		runtime "Release"
 		optimize "On"
 
 project "Sandbox"
 	location "Sandbox"
 	kind "ConsoleApp"
 	language "C++"
+	staticruntime "Off"
 
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
@@ -116,7 +118,6 @@ project "Sandbox"
 
 	filter "system:windows"
 		cppdialect "C++17"
-		staticruntime "On"
 		systemversion "latest"
 		
 		defines
@@ -126,15 +127,15 @@ project "Sandbox"
 
 	filter "configurations:Debug"
 		defines "PACO_DEBUG"
-		buildoptions "/MDd"
+		runtime "Debug"
 		symbols "On"
 
 	filter "configurations:Release"
 		defines "PACO_RELEASE"
-		buildoptions "/MD"
+		runtime "Release"
 		optimize "On"
 
 	filter "configurations:Dist"
 		defines "PACO_DIST"
-		buildoptions "/MD"
+		runtime "Release"
 		optimize "On"

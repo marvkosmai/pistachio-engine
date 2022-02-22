@@ -7,6 +7,9 @@
     <Filter Include="Pistachio\Events">
       <UniqueIdentifier>{6D4D04E2-5946-2334-8278-08B96ED00240}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Pistachio\ImGui">
+      <UniqueIdentifier>{938914E8-FF14-82AC-0826-05A17430DEAC}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Platform">
       <UniqueIdentifier>{2AC788B4-1694-E3BF-3FAD-D1672BD9184E}</UniqueIdentifier>
     </Filter>
@@ -40,6 +43,9 @@
     <ClInclude Include="src\Pistachio\Events\MouseEvent.h">
       <Filter>Pistachio\Events</Filter>
     </ClInclude>
+    <ClInclude Include="src\Pistachio\ImGui\ImGuiLayer.h">
+      <Filter>Pistachio\ImGui</Filter>
+    </ClInclude>
     <ClInclude Include="src\Pistachio\Layer.h">
       <Filter>Pistachio</Filter>
     </ClInclude>
@@ -59,11 +65,13 @@
       <Filter>Platform\Windows</Filter>
     </ClInclude>
     <ClInclude Include="src\pacopch.h" />
-    <ClInclude Include="src\Pistachio\ImGui\ImGuiLayer.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Pistachio\Application.cpp">
       <Filter>Pistachio</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Pistachio\ImGui\ImGuiLayer.cpp">
+      <Filter>Pistachio\ImGui</Filter>
     </ClCompile>
     <ClCompile Include="src\Pistachio\Layer.cpp">
       <Filter>Pistachio</Filter>
@@ -81,6 +89,5 @@
       <Filter>Platform\Windows</Filter>
     </ClCompile>
     <ClCompile Include="src\pacopch.cpp" />
-    <ClCompile Include="src\Pistachio\ImGui\ImGuiLayer.cpp" />
   </ItemGroup>
 </Project>
