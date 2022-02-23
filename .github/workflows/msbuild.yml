@@ -13,7 +13,8 @@ jobs:
     runs-on: windows-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout repo(s)
+        uses: actions/checkout@v2
         with:
           submodules: recursive
       
@@ -24,4 +25,4 @@ jobs:
         uses: microsoft/setup-msbuild@v1.1
         
       - name: Build app for debug
-        run: msbuild Pistachio.sln -t:rebuild -verbosity:diag -property:Configuration=Debug
+        run: msbuild Pistachio.sln -t:rebuild -verbosity:n -property:Configuration=Debug
