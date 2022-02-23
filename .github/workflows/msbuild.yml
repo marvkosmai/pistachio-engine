@@ -26,3 +26,11 @@ jobs:
         
       - name: Build app for debug
         run: msbuild Pistachio.sln -t:rebuild -verbosity:n -property:Configuration=Debug
+
+      - name: Upload application
+        uses: actions/upload-artifact@v2
+        with:
+          name: app-debug
+          path: |
+            bin\Debug-windows-x86_64\Sandbox\Pistachio.dll
+            bin\Debug-windows-x86_64\Sandbox\Sandbox.exe
