@@ -1,0 +1,28 @@
+name: MSBuild Debug
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout repo(s)
+        uses: actions/checkout@v2
+        with:
+          submodules: recursive
+      
+      - name: Build project with premake
+        run: .\vendor\bin\premake\premake5.exe vs2019
+
+      - name: Add msbuild to PATH
+        uses: microsoft/setup-msbuild@v1.1
+        
+      - name: Build app for debug
+        run: msbuild Pistachio.sln -t:rebuild -verbosity:n -property:Configuration=Debug
