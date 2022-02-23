@@ -16,7 +16,7 @@ jobs:
       - uses: actions/checkout@v2
       
       - name: Build project with premake
-        run: call vendor\bin\premake\premake5.exe vs2019
+        run: .\vendor\bin\premake\premake5.exe vs2019
 
       - name: Add msbuild to PATH
         uses: microsoft/setup-msbuild@v1.1
