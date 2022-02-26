@@ -55,6 +55,9 @@
     <ClInclude Include="src\Pistachio\Log.h">
       <Filter>Pistachio</Filter>
     </ClInclude>
+    <ClInclude Include="src\Pistachio\Noise.h">
+      <Filter>Pistachio</Filter>
+    </ClInclude>
     <ClInclude Include="src\Pistachio\Window.h">
       <Filter>Pistachio</Filter>
     </ClInclude>
@@ -80,6 +83,9 @@
       <Filter>Pistachio</Filter>
     </ClCompile>
     <ClCompile Include="src\Pistachio\Log.cpp">
+      <Filter>Pistachio</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Pistachio\Noise.cpp">
       <Filter>Pistachio</Filter>
     </ClCompile>
     <ClCompile Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.cpp">

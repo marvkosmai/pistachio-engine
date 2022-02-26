@@ -80,7 +80,7 @@
       <PrecompiledHeaderFile>pacopch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>PACO_PLATFORM_WINDOWS;PACO_BUILD_DLL;GLFW_INCLUDE_NONE;PACO_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>src;vendor\spdlog\include;vendor\GLFW\include;vendor\GLAD\include;vendor\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src;vendor\spdlog\include;vendor\GLFW\include;vendor\GLAD\include;vendor\imgui;vendor\FastNoise2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
@@ -93,7 +93,7 @@
       <ImportLibrary>..\bin\Debug-windows-x86_64\Pistachio\Pistachio.lib</ImportLibrary>
     </Link>
     <PostBuildEvent>
-      <Command>xcopy /Q /E /Y /I ..\bin\Debug-windows-x86_64\Pistachio\Pistachio.dll ..\bin\Debug-windows-x86_64\Sandbox</Command>
+      <Command>IF EXIST ..\bin\Debug-windows-x86_64\Pistachio\Pistachio.dll\ (xcopy /Q /E /Y /I ..\bin\Debug-windows-x86_64\Pistachio\Pistachio.dll "..\bin\Debug-windows-x86_64\Sandbox\" &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Debug-windows-x86_64\Pistachio\Pistachio.dll "..\bin\Debug-windows-x86_64\Sandbox\" &gt; nul)</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -102,7 +102,7 @@
       <PrecompiledHeaderFile>pacopch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>PACO_PLATFORM_WINDOWS;PACO_BUILD_DLL;GLFW_INCLUDE_NONE;PACO_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>src;vendor\spdlog\include;vendor\GLFW\include;vendor\GLAD\include;vendor\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src;vendor\spdlog\include;vendor\GLFW\include;vendor\GLAD\include;vendor\imgui;vendor\FastNoise2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -119,7 +119,7 @@
       <ImportLibrary>..\bin\Release-windows-x86_64\Pistachio\Pistachio.lib</ImportLibrary>
     </Link>
     <PostBuildEvent>
-      <Command>xcopy /Q /E /Y /I ..\bin\Release-windows-x86_64\Pistachio\Pistachio.dll ..\bin\Release-windows-x86_64\Sandbox</Command>
+      <Command>IF EXIST ..\bin\Release-windows-x86_64\Pistachio\Pistachio.dll\ (xcopy /Q /E /Y /I ..\bin\Release-windows-x86_64\Pistachio\Pistachio.dll "..\bin\Release-windows-x86_64\Sandbox\" &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Release-windows-x86_64\Pistachio\Pistachio.dll "..\bin\Release-windows-x86_64\Sandbox\" &gt; nul)</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Dist|x64'">
@@ -128,7 +128,7 @@
       <PrecompiledHeaderFile>pacopch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>PACO_PLATFORM_WINDOWS;PACO_BUILD_DLL;GLFW_INCLUDE_NONE;PACO_DIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>src;vendor\spdlog\include;vendor\GLFW\include;vendor\GLAD\include;vendor\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src;vendor\spdlog\include;vendor\GLFW\include;vendor\GLAD\include;vendor\imgui;vendor\FastNoise2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -145,7 +145,7 @@
       <ImportLibrary>..\bin\Dist-windows-x86_64\Pistachio\Pistachio.lib</ImportLibrary>
     </Link>
     <PostBuildEvent>
-      <Command>xcopy /Q /E /Y /I ..\bin\Dist-windows-x86_64\Pistachio\Pistachio.dll ..\bin\Dist-windows-x86_64\Sandbox</Command>
+      <Command>IF EXIST ..\bin\Dist-windows-x86_64\Pistachio\Pistachio.dll\ (xcopy /Q /E /Y /I ..\bin\Dist-windows-x86_64\Pistachio\Pistachio.dll "..\bin\Dist-windows-x86_64\Sandbox\" &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Dist-windows-x86_64\Pistachio\Pistachio.dll "..\bin\Dist-windows-x86_64\Sandbox\" &gt; nul)</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -161,6 +161,7 @@
     <ClInclude Include="src\Pistachio\Layer.h" />
     <ClInclude Include="src\Pistachio\LayerStack.h" />
     <ClInclude Include="src\Pistachio\Log.h" />
+    <ClInclude Include="src\Pistachio\Noise.h" />
     <ClInclude Include="src\Pistachio\Window.h" />
     <ClInclude Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.h" />
     <ClInclude Include="src\Platform\Windows\WindowsWindow.h" />
@@ -172,6 +173,7 @@
     <ClCompile Include="src\Pistachio\Layer.cpp" />
     <ClCompile Include="src\Pistachio\LayerStack.cpp" />
     <ClCompile Include="src\Pistachio\Log.cpp" />
+    <ClCompile Include="src\Pistachio\Noise.cpp" />
     <ClCompile Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.cpp" />
     <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp" />
     <ClCompile Include="src\pacopch.cpp">
@@ -187,6 +189,9 @@
     </ProjectReference>
     <ProjectReference Include="vendor\imgui\ImGui.vcxproj">
       <Project>{C0FF640D-2C14-8DBE-F595-301E616989EF}</Project>
+    </ProjectReference>
+    <ProjectReference Include="vendor\FastNoise2\FastNoise2.vcxproj">
+      <Project>{6313B534-4FCB-F681-B8D2-CFDDA4A99172}</Project>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

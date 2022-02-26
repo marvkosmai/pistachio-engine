@@ -7,3 +7,6 @@
 [submodule "Pistachio/vendor/imgui"]
 	path = Pistachio/vendor/imgui
 	url = https://github.com/marvkosmai/imgui
+[submodule "Pistachio/vendor/FastNoise2"]
+	path = Pistachio/vendor/FastNoise2
+	url = https://github.com/marvkosmai/FastNoise2

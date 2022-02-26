@@ -16,11 +16,13 @@ IncludeDir = {}
 IncludeDir["GLFW"] = "Pistachio/vendor/GLFW/include"
 IncludeDir["GLAD"] = "Pistachio/vendor/GLAD/include"
 IncludeDir["ImGui"] = "Pistachio/vendor/imgui"
+IncludeDir["FastNoise2"] = "Pistachio/vendor/FastNoise2/include"
 
 group "Dependencies"
 	include "Pistachio/vendor/GLFW"
 	include "Pistachio/vendor/GLAD"
 	include "Pistachio/vendor/imgui"
+	include "Pistachio/vendor/FastNoise2"
 
 group ""
 
@@ -48,7 +50,8 @@ project "Pistachio"
 		"%{prj.name}/vendor/spdlog/include",
 		"%{IncludeDir.GLFW}",
 		"%{IncludeDir.GLAD}",
-		"%{IncludeDir.ImGui}"
+		"%{IncludeDir.ImGui}",
+		"%{IncludeDir.FastNoise2}"
 	}
 
 	links
@@ -56,6 +59,7 @@ project "Pistachio"
 		"GLFW",
 		"GLAD",
 		"ImGui",
+		"FastNoise2",
 		"opengl32.lib"
 	}
 
