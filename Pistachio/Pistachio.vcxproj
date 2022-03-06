@@ -166,19 +166,18 @@
     <ClInclude Include="src\Pistachio\MouseButtonCodes.h" />
     <ClInclude Include="src\Pistachio\Noise.h" />
     <ClInclude Include="src\Pistachio\Window.h" />
-    <ClInclude Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.h" />
     <ClInclude Include="src\Platform\Windows\WindowsInput.h" />
     <ClInclude Include="src\Platform\Windows\WindowsWindow.h" />
     <ClInclude Include="src\pacopch.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Pistachio\Application.cpp" />
+    <ClCompile Include="src\Pistachio\ImGui\ImGuiBuild.cpp" />
     <ClCompile Include="src\Pistachio\ImGui\ImGuiLayer.cpp" />
     <ClCompile Include="src\Pistachio\Layer.cpp" />
     <ClCompile Include="src\Pistachio\LayerStack.cpp" />
     <ClCompile Include="src\Pistachio\Log.cpp" />
     <ClCompile Include="src\Pistachio\Noise.cpp" />
-    <ClCompile Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.cpp" />
     <ClCompile Include="src\Platform\Windows\WindowsInput.cpp" />
     <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp" />
     <ClCompile Include="src\pacopch.cpp">
