@@ -10,3 +10,6 @@
 [submodule "Pistachio/vendor/FastNoise2"]
 	path = Pistachio/vendor/FastNoise2
 	url = https://github.com/marvkosmai/FastNoise2
+[submodule "Pistachio/vendor/GLM"]
+	path = Pistachio/vendor/GLM
+	url = https://github.com/g-truc/glm
