@@ -6,5 +6,6 @@ namespace Pistachio {
 	{
 	public:
 		static std::vector<float> Simplex2D(unsigned int width, unsigned int height);
+		static std::vector<float> Perlin2D(unsigned int width, unsigned int height);
 	};
 }

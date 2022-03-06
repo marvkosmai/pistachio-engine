@@ -15,4 +15,15 @@ namespace Pistachio {
 
 		return noiseOutput;
 	}
+
+	std::vector<float> Noise::Perlin2D(unsigned int width, unsigned int height)
+	{
+		auto fnSimplex = FastNoise::New<FastNoise::Perlin>();
+
+		std::vector<float> noiseOutput(width * height);
+
+		fnSimplex->GenUniformGrid2D(noiseOutput.data(), 0, 0, width, height, 0.2f, 1337);
+
+		return noiseOutput;
+	}
 }
