@@ -46,6 +46,12 @@
     <ClInclude Include="src\Pistachio\ImGui\ImGuiLayer.h">
       <Filter>Pistachio\ImGui</Filter>
     </ClInclude>
+    <ClInclude Include="src\Pistachio\Input.h">
+      <Filter>Pistachio</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Pistachio\KeyCodes.h">
+      <Filter>Pistachio</Filter>
+    </ClInclude>
     <ClInclude Include="src\Pistachio\Layer.h">
       <Filter>Pistachio</Filter>
     </ClInclude>
@@ -53,6 +59,9 @@
       <Filter>Pistachio</Filter>
     </ClInclude>
     <ClInclude Include="src\Pistachio\Log.h">
+      <Filter>Pistachio</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Pistachio\MouseButtonCodes.h">
       <Filter>Pistachio</Filter>
     </ClInclude>
     <ClInclude Include="src\Pistachio\Noise.h">
@@ -64,14 +73,13 @@
     <ClInclude Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.h">
       <Filter>Platform\OpenGL</Filter>
     </ClInclude>
+    <ClInclude Include="src\Platform\Windows\WindowsInput.h">
+      <Filter>Platform\Windows</Filter>
+    </ClInclude>
     <ClInclude Include="src\Platform\Windows\WindowsWindow.h">
       <Filter>Platform\Windows</Filter>
     </ClInclude>
     <ClInclude Include="src\pacopch.h" />
-    <ClInclude Include="src\Pistachio\Input.h" />
-    <ClInclude Include="src\Platform\Windows\WindowsInput.h" />
-    <ClInclude Include="src\Pistachio\KeyCodes.h" />
-    <ClInclude Include="src\Pistachio\MouseButtonCodes.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Pistachio\Application.cpp">
@@ -95,10 +103,12 @@
     <ClCompile Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.cpp">
       <Filter>Platform\OpenGL</Filter>
     </ClCompile>
+    <ClCompile Include="src\Platform\Windows\WindowsInput.cpp">
+      <Filter>Platform\Windows</Filter>
+    </ClCompile>
     <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp">
       <Filter>Platform\Windows</Filter>
     </ClCompile>
     <ClCompile Include="src\pacopch.cpp" />
-    <ClCompile Include="src\Platform\Windows\WindowsInput.cpp" />
   </ItemGroup>
 </Project>

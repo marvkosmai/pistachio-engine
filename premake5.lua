@@ -15,6 +15,7 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 IncludeDir = {}
 IncludeDir["GLFW"] = "Pistachio/vendor/GLFW/include"
 IncludeDir["GLAD"] = "Pistachio/vendor/GLAD/include"
+IncludeDir["GLM"] = "Pistachio/vendor/GLM"
 IncludeDir["ImGui"] = "Pistachio/vendor/imgui"
 IncludeDir["FastNoise2"] = "Pistachio/vendor/FastNoise2/include"
 
@@ -50,6 +51,7 @@ project "Pistachio"
 		"%{prj.name}/vendor/spdlog/include",
 		"%{IncludeDir.GLFW}",
 		"%{IncludeDir.GLAD}",
+		"%{IncludeDir.GLM}",
 		"%{IncludeDir.ImGui}",
 		"%{IncludeDir.FastNoise2}"
 	}
@@ -112,7 +114,8 @@ project "Sandbox"
 	includedirs
 	{
 		"Pistachio/vendor/spdlog/include",
-		"Pistachio/src"
+		"Pistachio/src",
+		"%{IncludeDir.GLM}"
 	}
 
 	links
