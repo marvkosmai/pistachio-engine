@@ -10,12 +10,12 @@ public:
 
 	void OnUpdate() override
 	{
-		PACO_INFO("ExampleLayer::Update");
+		// PACO_INFO("ExampleLayer::Update");
 	}
 
 	void OnEvent(Pistachio::Event& event) override
 	{
-		PACO_TRACE("{0}", event);
+		// PACO_TRACE("{0}", event);
 	}
 };
 

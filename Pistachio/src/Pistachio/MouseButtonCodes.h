@@ -1,0 +1,16 @@
+#pragma once
+
+// From glfw3.h
+
+#define PACO_MOUSE_BUTTON_1         0
+#define PACO_MOUSE_BUTTON_2         1
+#define PACO_MOUSE_BUTTON_3         2
+#define PACO_MOUSE_BUTTON_4         3
+#define PACO_MOUSE_BUTTON_5         4
+#define PACO_MOUSE_BUTTON_6         5
+#define PACO_MOUSE_BUTTON_7         6
+#define PACO_MOUSE_BUTTON_8         7
+#define PACO_MOUSE_BUTTON_LAST      PACO_MOUSE_BUTTON_8
+#define PACO_MOUSE_BUTTON_LEFT      PACO_MOUSE_BUTTON_1
+#define PACO_MOUSE_BUTTON_RIGHT     PACO_MOUSE_BUTTON_2
+#define PACO_MOUSE_BUTTON_MIDDLE    PACO_MOUSE_BUTTON_3
