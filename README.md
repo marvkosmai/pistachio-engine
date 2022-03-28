@@ -1,6 +1,7 @@
 # Pistachio Engine
 
 Game Engine based on [Hazel Game Engine by The Cherno](https://www.youtube.com/playlist?list=PLlrATfBNZ98dC-V-N3m0Go4deliWHPFwT).
+Developed until video "ImGui Docking and Viewports".
 
 ## Progress
 
